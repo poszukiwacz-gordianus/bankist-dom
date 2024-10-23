@@ -4,7 +4,7 @@ import {
   Footer,
   Header,
   Hero,
-  HowItWorks,
+  Operations,
   Testimonials,
 } from "@/app/_sections/Sections";
 
@@ -15,8 +15,8 @@ export default function Page() {
 
       <main>
         <Hero />
-        <HowItWorks />
         <Features />
+        <Operations />
         <Testimonials />
         <CallToAction />
       </main>

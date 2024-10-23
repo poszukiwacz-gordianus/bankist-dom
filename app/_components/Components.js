@@ -1,5 +1,5 @@
 import Button from "./Button";
-import FeatureTabs from "./FeatureTabs";
+import OperationTabs from "./OperationTabs";
 import FooterLinks from "./FooterLinks";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
@@ -9,7 +9,7 @@ import TestimonialSlider from "./TestimonialSlider";
 
 export {
   Button,
-  FeatureTabs,
+  OperationTabs,
   FooterLinks,
   Logo,
   Navigation,

@@ -1,17 +1,17 @@
 import CallToAction from "./CallToAction";
-import Features from "./Features";
+import Operations from "./Operations";
 import Footer from "./Footer";
 import Header from "./Header";
 import Hero from "./Hero";
-import HowItWorks from "./HowItWorks";
+import Features from "./Features";
 import Testimonials from "./Testimonials";
 
 export {
   CallToAction,
-  Features,
+  Operations,
   Footer,
   Header,
   Hero,
-  HowItWorks,
+  Features,
   Testimonials,
 };

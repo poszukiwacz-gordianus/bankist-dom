@@ -1,4 +1,4 @@
-export default function FeatureTabs() {
+export default function OperationTabs() {
   return (
     <div>
       <div>

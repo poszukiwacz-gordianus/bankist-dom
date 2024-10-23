@@ -3,7 +3,7 @@ import { Button, SectionHeader } from "@/app/_components/Components";
 
 export default function Hero() {
   return (
-    <section>
+    <section id="hero">
       <div>
         <SectionHeader />
         <p>{/* Description */}</p>

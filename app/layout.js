@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/app/_styles/globals.css";
 
 export const metadata = {
   title: "DEMO: Bankist",

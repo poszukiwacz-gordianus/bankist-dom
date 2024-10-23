@@ -8,7 +8,20 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var-(--font-poppins)"],
+        sans: ["var(--font-poppins)"],
+      },
+      screens: {
+        sm: "34em",
+        // => @media (min-width: 544px) { ... }
+
+        md: "55em",
+        // => @media (min-width: 880px) { ... }
+
+        lg: "69em",
+        // => @media (min-width: 1100px) { ... }
+
+        xl: "82em",
+        // => @media (min-width: 1312px) { ... }
       },
       colors: {
         primary: {

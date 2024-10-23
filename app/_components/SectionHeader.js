@@ -1,8 +1,8 @@
-export default function SectionHeader() {
+export default function SectionHeader({ header }) {
   return (
     <div>
       <h5>SubHeader</h5>
-      <h2>Header</h2>
+      <h2>{header}</h2>
     </div>
   );
 }

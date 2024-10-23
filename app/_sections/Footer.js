@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <FooterLinks />
-      <Logo />
+      {/* <Logo /> */}
       <p>{/* Copyright */}</p>
     </footer>
   );

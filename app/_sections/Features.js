@@ -6,12 +6,12 @@ import { featuresContent } from "../_content/content";
 import { Fragment } from "react";
 
 export default function Features() {
-  const { header, subHeader, stepsContent } = featuresContent;
+  const { id, header, subHeader, stepsContent } = featuresContent;
   const { width } = useWindowSize();
 
   return (
     <section
-      id="features"
+      id={id}
       className="mx-auto max-w-screen-lg px-4 py-14 md:px-6 md:py-20 lg:py-24"
     >
       <SectionHeader header={header} subHeader={subHeader} />

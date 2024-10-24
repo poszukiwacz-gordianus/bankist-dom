@@ -5,12 +5,12 @@ import Link from "next/link";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Hero() {
-  const { header, description, link, image, alt } = heroContent;
+  const { id, header, description, link, image, alt } = heroContent;
   const { sticky } = useNavigationContext();
 
   return (
     <section
-      id="hero"
+      id={id}
       className={`${sticky ? "mt-14 md:mt-20" : ""} mx-auto flex max-w-screen-lg flex-col gap-6 px-4 py-14 md:grid md:grid-cols-[1.2fr_0.8fr] md:gap-2 md:px-10 md:py-20 lg:py-24`}
     >
       <div className="flex flex-col items-center gap-6 text-center md:items-start md:py-6 md:text-left lg:gap-8 lg:py-4">

@@ -35,7 +35,9 @@ function StepInformation({ header, description, icon }) {
           {header}
         </h3>
       </div>
-      <p className="text-xs leading-6 md:text-sm lg:text-base">{description}</p>
+      <p className="text-xs leading-loose md:text-sm lg:text-base">
+        {description}
+      </p>
     </div>
   );
 }

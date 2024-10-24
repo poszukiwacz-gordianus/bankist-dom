@@ -20,13 +20,13 @@ export default function Page() {
         <hr />
         <Operations />
         <hr />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <hr />
-        <CallToAction />
+        {/* <CallToAction /> */}
         <hr />
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

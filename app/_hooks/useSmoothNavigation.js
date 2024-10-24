@@ -29,13 +29,13 @@ export default function useSmoothNavigation(value = 0) {
   useEffect(() => {
     const allLinks = document.querySelectorAll("a[href]");
     const handleLinkClick = (e) => {
+      e.preventDefault();
       const link = e.target.closest("a");
 
       if (link && link.href) {
         const href = link.href.split("/").at(-1);
 
         if (href.startsWith("#")) {
-          e.preventDefault();
           e.target.blur(); // Removes the focus from the link, hence removing the box-shadow
 
           if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });

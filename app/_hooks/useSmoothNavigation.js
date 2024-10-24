@@ -1,6 +1,31 @@
 import { useEffect } from "react";
 
-export default function useSmoothNavigation(offset = 0) {
+const isValid = (value) => {
+  if (isNaN(value)) {
+    console.warn("Not a number, provide number or string Xpx or X%");
+    return false;
+  }
+  if (value > window.innerHeight) {
+    console.warn("Value is greater than window.innerHeight");
+    return false;
+  }
+  return true;
+};
+
+export default function useSmoothNavigation(value = 0) {
+  let offset;
+  let type;
+
+  if (typeof value === "number") offset = value;
+  if (typeof value === "string") {
+    offset = Number.parseInt(value);
+    type = value.includes("px") ? "px" : value.includes("%") ? "%" : undefined;
+
+    if (type === "%") offset = (window.innerHeight * offset) / 100;
+  }
+
+  if (!isValid(offset)) return;
+
   useEffect(() => {
     const allLinks = document.querySelectorAll("a[href]");
     const handleLinkClick = (e) => {
@@ -36,5 +61,5 @@ export default function useSmoothNavigation(offset = 0) {
       allLinks.forEach((link) =>
         link.removeEventListener("click", handleLinkClick),
       );
-  }, [offset]);
+  }, [value, type]);
 }

@@ -1,24 +1,46 @@
 import Image from "next/image";
 
 function Steps({ children }) {
-  return <div>{children}</div>;
+  return (
+    <div className="grid grid-cols-1 items-center gap-9 sm:grid-cols-2 md:mt-20">
+      {children}
+    </div>
+  );
 }
 
 function StepImage({ image, alt }) {
-  <div>{/* <Image /> */}</div>;
+  return (
+    <div className="relative flex translate-y-6 items-center justify-center sm:translate-y-0">
+      <Image
+        src={image}
+        alt={alt}
+        width={500}
+        height={300}
+        className="h-auto w-screen"
+        sizes="100vw"
+        placeholder="blur"
+      />
+    </div>
+  );
 }
 
-function StepInformation({ step, header, description }) {
+function StepInformations({ header, description, icon }) {
   return (
-    <div>
-      <p>{step}</p>
-      <h3>{header}</h3>
-      <p>{description}</p>
+    <div className="flex flex-col gap-2 sm:gap-4 md:px-10 lg:px-20">
+      <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-2 md:gap-3 lg:gap-6">
+        <p className="text-primary-500 bg-primary-300 rounded-full p-3 text-2xl sm:text-3xl lg:text-4xl">
+          {icon}
+        </p>
+        <h3 className="text-base font-medium leading-none sm:text-lg xl:text-xl">
+          {header}
+        </h3>
+      </div>
+      <p className="text-xs leading-6 md:text-sm lg:text-base">{description}</p>
     </div>
   );
 }
 
 Steps.Image = StepImage;
-Steps.Information = StepInformation;
+Steps.Informations = StepInformations;
 
 export default Steps;

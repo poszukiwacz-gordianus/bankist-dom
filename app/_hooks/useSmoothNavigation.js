@@ -1,20 +1,32 @@
 import { useEffect } from "react";
 
-export default function useSmoothNavigation() {
+export default function useSmoothNavigation(offset = 0) {
   useEffect(() => {
     const allLinks = document.querySelectorAll("a[href]");
     const handleLinkClick = (e) => {
-      const href = e.target.closest("a")?.href.split("/").at(-1);
+      const link = e.target.closest("a");
 
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        e.target.blur(); // Removes the focus from the link, hence removing the box-shadow
+      if (link && link.href) {
+        const href = link.href.split("/").at(-1);
 
-        if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          e.target.blur(); // Removes the focus from the link, hence removing the box-shadow
 
-        if (href !== "#") {
-          const sectionEl = document.querySelector(href);
-          sectionEl.scrollIntoView({ behavior: "smooth" });
+          if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+
+          if (href !== "#") {
+            const sectionEl = document.querySelector(href);
+            if (!sectionEl) return;
+
+            const sectionPosition =
+              sectionEl.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+              top: sectionPosition - offset,
+              behavior: "smooth",
+            });
+          }
         }
       }
     };
@@ -24,5 +36,5 @@ export default function useSmoothNavigation() {
       allLinks.forEach((link) =>
         link.removeEventListener("click", handleLinkClick),
       );
-  }, []);
+  }, [offset]);
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Hero() {
-  const { header, description, button, image, alt } = heroContent;
+  const { header, description, link, image, alt } = heroContent;
   const { sticky } = useNavigationContext();
 
   return (
@@ -19,10 +19,10 @@ export default function Hero() {
         </h1>
         <p className="px-6 text-xl md:px-0 md:text-2xl">{description}</p>
         <Link
-          href="#"
+          href={link.link}
           className="text-primary-500 hover:text-primary-700 solid border-primary-500 hover:border-primary-700 mt-auto w-36 border-b-[1px] text-lg transition-all duration-300 md:text-xl"
         >
-          {button}
+          {link.text}
         </Link>
       </div>
 

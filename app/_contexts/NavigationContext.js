@@ -12,7 +12,7 @@ function NavigationProvider({ children }) {
   const [opacity, setOpacity] = useState(false);
   const [opacityEl, setOpacityEl] = useState("");
 
-  useSmoothNavigation();
+  useSmoothNavigation(50);
   useStickyNavigation(sticky, setSticky, "hero");
 
   function changeOpacity(target) {

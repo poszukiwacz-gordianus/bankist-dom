@@ -1,4 +1,12 @@
 const importAll = (requireContext) => requireContext.keys().map(requireContext);
+import {
+  LuMonitor,
+  LuTrendingUp,
+  LuCreditCard,
+  LuUpload,
+  LuHome,
+} from "react-icons/lu";
+import { BsPersonX } from "react-icons/bs";
 
 /* HEADER */
 
@@ -29,7 +37,7 @@ export const heroContent = {
     </>
   ),
   description: "A simpler banking experience for a simpler life.",
-  button: "Learn more ↓",
+  link: { link: "#features", text: "Learn more ↓" },
   image: heroImage,
   alt: "Collage of three images: a white computer keyboard and mouse on a white surface, a US one-dollar bill, and a green plant.",
 };
@@ -39,8 +47,6 @@ const features = importAll(
   require.context("@/public/img/features", false, /\.(png|jpe?g|svg)$/),
 );
 const featureImage = features.map((img) => img.default);
-
-import { LuMonitor, LuTrendingUp, LuCreditCard } from "react-icons/lu";
 
 export const featuresContent = {
   header: "Everything you need in a modern bank and more.",
@@ -74,3 +80,31 @@ export const featuresContent = {
 };
 
 /* Operations */
+
+export const operationsContent = {
+  header: "Everything as simple as possible, but no simpler.",
+  subHeader: "Operations",
+  operations: [
+    {
+      title: "Instant Transfers",
+      header: "Tranfser money to anyone, instantly! No fees, no BS.",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      icon: <LuUpload />,
+    },
+    {
+      title: "Instant Loans",
+      header: "Buy a home or make your dreams come true, with instant loans.",
+      content:
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      icon: <LuHome />,
+    },
+    {
+      title: "Instant Closing",
+      header: "No longer need your account? No problem! Close it instantly.",
+      content:
+        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      icon: <BsPersonX />,
+    },
+  ],
+};

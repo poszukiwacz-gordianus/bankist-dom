@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { headerContent } from "../_content/content";
 import { useNavigationContext } from "../_contexts/NavigationContext";
-import useCloseOnOutsideInteraction from "../_hooks/useCloseOnOutsideInteraction";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
+import useOutsideClickOrInteraction from "../_hooks/useOutsideClickOrInteraction";
 
 export default function Navigation() {
-  const { isOpen, setIsOpen, opacity, opacityEl } = useNavigationContext();
+  const { isOpen, setIsOpen, opacity, opacityEl, changeOpacity } =
+    useNavigationContext();
 
-  const ref = useCloseOnOutsideInteraction(
-    () => setIsOpen(false),
-    [{ event: "scroll", listenCapturing: false }],
-  );
+  const ref = useOutsideClickOrInteraction(() => {
+    setIsOpen(false);
+    changeOpacity("");
+  }, ["scroll"]);
 
   const { navigation } = headerContent;
 

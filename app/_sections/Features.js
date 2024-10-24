@@ -9,8 +9,6 @@ export default function Features() {
   const { header, subHeader, stepsContent } = featuresContent;
   const { width } = useWindowSize();
 
-  console.log(stepsContent);
-
   return (
     <section
       id="features"
@@ -24,7 +22,7 @@ export default function Features() {
               <Steps.Image image={step.image} alt={step.alt} />
             ) : null}
 
-            <Steps.Informations
+            <Steps.Information
               header={step.header}
               description={step.description}
               icon={step.icon}

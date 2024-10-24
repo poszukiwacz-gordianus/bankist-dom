@@ -6,8 +6,7 @@ import { headerContent } from "../_content/content";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Header() {
-  const { sticky, opacity, setOpacity, opacityEl, setOpacityEl } =
-    useNavigationContext();
+  const { sticky, opacity, opacityEl, changeOpacity } = useNavigationContext();
 
   const {
     image: {
@@ -15,22 +14,10 @@ export default function Header() {
     },
   } = headerContent;
 
-  function changeOpacity(e) {
-    const target = e.target.closest("a")?.href;
-
-    if (!target) {
-      setOpacity(false);
-      setOpacityEl("");
-    } else {
-      setOpacityEl(target?.split("/").at(-1));
-      setOpacity(true);
-    }
-  }
-
   return (
     <header
-      className={`${sticky ? "fixed bottom-0 top-0 z-50 h-12 w-full bg-white py-10 opacity-95 shadow-sm md:h-16" : "relative h-20 sm:h-24"} flex items-center justify-between px-4 py-6 lg:px-6`}
-      onMouseOver={changeOpacity}
+      className={`${sticky ? "fixed bottom-0 top-0 z-50 h-16 w-full bg-white py-10 opacity-95 shadow-sm" : "relative"} flex items-center justify-between px-4 py-6 transition-all duration-500 lg:px-6`}
+      onMouseOver={(e) => changeOpacity(e.target.closest("a")?.href)}
     >
       <Link
         href={link}

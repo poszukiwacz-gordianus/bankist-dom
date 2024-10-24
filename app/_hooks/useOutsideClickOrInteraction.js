@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 
-export default function useCloseOnOutsideInteraction(
+export default function useOutsideClickOrInteraction(
   callback,
-  options = [{ event: "click", listenCapturing: true }],
+  options = ["click"],
+  listenCapturing = false,
 ) {
   const ref = useRef();
 
@@ -14,20 +15,12 @@ export default function useCloseOnOutsideInteraction(
     }
 
     options.map((option) =>
-      document.addEventListener(
-        option.event,
-        handleEvent,
-        option.listenCapturing,
-      ),
+      document.addEventListener(option, handleEvent, listenCapturing),
     );
 
     return () =>
       options.map((option) =>
-        document.removeEventListener(
-          option.event,
-          handleEvent,
-          option.listenCapturing,
-        ),
+        document.removeEventListener(option, handleEvent, listenCapturing),
       );
   }, [callback, ref, options]);
 

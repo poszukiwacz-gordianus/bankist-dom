@@ -2,6 +2,7 @@
 
 import { createContext, useState, useContext } from "react";
 import useSmoothNavigation from "../_hooks/useSmoothNavigation";
+import useStickyNavigation from "../_hooks/useStickyNavigation";
 
 const NavigationContext = createContext();
 
@@ -11,19 +12,28 @@ function NavigationProvider({ children }) {
   const [opacity, setOpacity] = useState(false);
   const [opacityEl, setOpacityEl] = useState("");
 
-  useSmoothNavigation(sticky, setSticky, "hero");
+  useSmoothNavigation();
+  useStickyNavigation(sticky, setSticky, "hero");
+
+  function changeOpacity(target) {
+    if (!target) {
+      setOpacity(false);
+      setOpacityEl("");
+    } else {
+      setOpacityEl(target?.split("/").at(-1));
+      setOpacity(true);
+    }
+  }
 
   return (
     <NavigationContext.Provider
       value={{
         sticky,
-        setSticky,
         isOpen,
         setIsOpen,
         opacity,
-        setOpacity,
         opacityEl,
-        setOpacityEl,
+        changeOpacity,
       }}
     >
       {children}

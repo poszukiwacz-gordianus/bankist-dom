@@ -1,14 +1,17 @@
+"use client";
 import Image from "next/image";
 import { heroContent } from "../_content/content";
 import Link from "next/link";
+import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Hero() {
   const { header, description, button, image, alt } = heroContent;
+  const { sticky } = useNavigationContext();
 
   return (
     <section
       id="hero"
-      className="mx-auto flex max-w-screen-lg flex-col gap-6 px-4 pb-12 pt-6 md:grid md:grid-cols-[1.2fr_0.8fr] md:gap-2 md:px-10 md:py-12"
+      className={`${sticky ? "mt-32" : ""} mx-auto flex max-w-screen-lg flex-col gap-6 px-4 pb-12 pt-6 md:grid md:grid-cols-[1.2fr_0.8fr] md:gap-2 md:px-10 md:py-12`}
     >
       <div className="flex flex-col items-center gap-6 text-center md:items-start md:py-6 md:text-left lg:gap-8 lg:py-4">
         <h1 className="text-4xl font-medium leading-[3rem] sm:text-5xl sm:leading-[4.2rem] md:tracking-tighter lg:text-6xl lg:leading-[5.2rem]">

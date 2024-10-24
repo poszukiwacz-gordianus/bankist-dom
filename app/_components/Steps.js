@@ -24,7 +24,7 @@ function StepImage({ image, alt }) {
   );
 }
 
-function StepInformations({ header, description, icon }) {
+function StepInformation({ header, description, icon }) {
   return (
     <div className="flex flex-col gap-2 sm:gap-4 md:px-10 lg:px-20">
       <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-2 md:gap-3 lg:gap-6">
@@ -41,6 +41,6 @@ function StepInformations({ header, description, icon }) {
 }
 
 Steps.Image = StepImage;
-Steps.Informations = StepInformations;
+Steps.Information = StepInformation;
 
 export default Steps;

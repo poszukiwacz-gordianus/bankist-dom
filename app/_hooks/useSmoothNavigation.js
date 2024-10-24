@@ -24,7 +24,7 @@ export default function useSmoothNavigation(value = 0) {
     if (type === "%") offset = (window.innerHeight * offset) / 100;
   }
 
-  if (!isValid(offset)) return;
+  if (typeof window !== "undefined" && !isValid(offset)) return;
 
   useEffect(() => {
     const allLinks = document.querySelectorAll("a[href]");

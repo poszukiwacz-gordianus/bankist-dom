@@ -12,7 +12,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="mx-auto max-w-screen-lg px-4 py-14 md:px-6 md:py-12 lg:py-24"
+      className="mx-auto max-w-screen-lg px-4 py-14 md:px-6 md:py-20 lg:py-24"
     >
       <SectionHeader header={header} subHeader={subHeader} />
       <Steps>

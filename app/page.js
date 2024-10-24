@@ -15,10 +15,15 @@ export default function Page() {
 
       <main>
         <Hero />
+        <hr />
         <Features />
+        <hr />
         <Operations />
+        <hr />
         <Testimonials />
+        <hr />
         <CallToAction />
+        <hr />
       </main>
 
       <Footer />

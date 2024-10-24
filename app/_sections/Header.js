@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header
-      className={`${sticky ? "fixed bottom-0 top-0 z-50 h-16 w-full bg-white py-10 opacity-95 shadow-sm" : "relative"} flex items-center justify-between px-4 py-6 transition-all duration-500 lg:px-6`}
+      className={`${sticky ? "fixed bottom-0 top-0 z-50 h-14 w-full bg-white py-0 opacity-95 shadow-sm md:h-20" : "relative h-14 md:h-20"} flex items-center justify-between px-4 transition-all duration-500 lg:px-6`}
       onMouseOver={(e) => changeOpacity(e.target.closest("a")?.href)}
     >
       <Link

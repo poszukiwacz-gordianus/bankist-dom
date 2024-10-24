@@ -12,7 +12,7 @@ export default function Logo() {
       width={350}
       height={106}
       alt={alt}
-      className="h-12 w-40"
+      className="h-8 w-28 md:h-12 md:w-40"
       sizes="100vw"
       quality={100}
     />

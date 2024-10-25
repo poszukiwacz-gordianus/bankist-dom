@@ -184,3 +184,12 @@ export const testimonialsContent = {
     },
   ],
 };
+
+/* CALLTOACTION */
+
+export const callToActionContent = {
+  id: "cta",
+  header:
+    "The best day to join Bankist was one year ago. The second best is today!",
+  button: "Open your free account today!",
+};

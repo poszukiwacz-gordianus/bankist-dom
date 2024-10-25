@@ -11,18 +11,18 @@ import {
 export default function Page() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
       <main>
-        {/* <Hero /> */}
+        <Hero />
         <hr />
-        {/* <Features /> */}
+        <Features />
         <hr />
         <Operations />
         <hr />
         <Testimonials />
         <hr />
-        {/* <CallToAction /> */}
+        <CallToAction />
         <hr />
       </main>
 

@@ -5,6 +5,7 @@ import { headerContent } from "../_content/content";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import useOutsideClickOrInteraction from "../_hooks/useOutsideClickOrInteraction";
+import { Modal, OpenAccount } from "@/app/_components/Components";
 
 export default function Navigation() {
   const { isOpen, setIsOpen, opacity, opacityEl, changeOpacity } =
@@ -15,7 +16,7 @@ export default function Navigation() {
     changeOpacity("");
   }, ["scroll"]);
 
-  const { navigation } = headerContent;
+  const { navigation, button } = headerContent;
 
   return (
     <>
@@ -31,7 +32,7 @@ export default function Navigation() {
             >
               <Link
                 href={nav.link}
-                className={`text-2xl transition-all duration-300 md:inline-block md:text-lg lg:text-lg ${i + 1 === navigation.length ? "bg-primary-500 hover:bg-primary-600 rounded-full px-5 py-2" : ""}`}
+                className={`text-2xl transition-all duration-300 md:inline-block md:text-lg lg:text-lg`}
                 onClick={() => setIsOpen(false)}
                 aria-label={`Go to ${nav.text}`}
               >
@@ -39,6 +40,29 @@ export default function Navigation() {
               </Link>
             </li>
           ))}
+          <li
+            className={`${opacity && opacityEl !== "#modal" ? "opacity-50" : "opacity-100"} transition-all duration-500`}
+          >
+            <Modal>
+              <Modal.Open open="modal">
+                <Link href="#modal">
+                  <button
+                    className="bg-primary-500 hover:bg-primary-600 rounded-full px-5 py-2 text-2xl transition-all duration-300 md:inline-block md:text-lg lg:text-lg"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false);
+                    }}
+                    aria-label={`Go to ${button}`}
+                  >
+                    {button}
+                  </button>
+                </Link>
+              </Modal.Open>
+              <Modal.Window name="modal">
+                <OpenAccount />
+              </Modal.Window>
+            </Modal>
+          </li>
         </ul>
       </nav>
       <button

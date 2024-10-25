@@ -21,8 +21,8 @@ export const headerContent = {
     { link: "#features", text: "Features" },
     { link: "#operations", text: "Operations" },
     { link: "#testimonials", text: "Testimonials" },
-    { link: "#modal", text: "Open Account" },
   ],
+  button: "Open Account",
 };
 
 /* HERO */

@@ -7,6 +7,8 @@ import SectionHeader from "./SectionHeader";
 import Steps from "./Steps";
 import TestimonialSlider from "./TestimonialSlider";
 import TestimonialDots from "./TestimonialDots";
+import Modal from "./Modal";
+import OpenAccount from "./OpenAccount";
 
 export {
   Button,
@@ -18,4 +20,6 @@ export {
   Steps,
   TestimonialSlider,
   TestimonialDots,
+  Modal,
+  OpenAccount,
 };

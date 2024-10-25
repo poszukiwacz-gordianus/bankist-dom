@@ -1,6 +1,6 @@
 export default function SectionHeader({ header, subHeader }) {
   return (
-    <div className="text-center sm:text-left">
+    <div className="text-center">
       <h3
         className={`text-primary-600 mb-1 block text-xs font-medium uppercase sm:text-sm lg:mb-4 lg:text-base`}
       >

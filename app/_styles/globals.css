@@ -20,4 +20,16 @@
     transform: scale(1.07, 1.05) skewX(-15deg);
     background-image: linear-gradient(to top left, #39b385, #9be15d);
   }
+
+  .quote-mark::before {
+    content: "\201C";
+    position: absolute;
+    top: -0.8rem;
+    left: 0rem;
+    line-height: 1;
+    font-size: 4rem;
+    font-family: inherit;
+    color: theme("colors.primary.500");
+    z-index: -1;
+  }
 }

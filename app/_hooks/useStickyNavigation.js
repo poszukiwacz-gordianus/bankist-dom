@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export default function useStickyNavigation(value, callback, section) {
   return useEffect(() => {
     const handleScroll = () => {
-      const sectionHeight = document.getElementById(section).offsetHeight;
+      const sectionHeight = document.getElementById(section)?.offsetHeight;
       if (window.scrollY > sectionHeight) {
         callback(true);
       } else {

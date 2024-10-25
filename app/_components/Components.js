@@ -6,6 +6,7 @@ import Navigation from "./Navigation";
 import SectionHeader from "./SectionHeader";
 import Steps from "./Steps";
 import TestimonialSlider from "./TestimonialSlider";
+import TestimonialDots from "./TestimonialDots";
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   SectionHeader,
   Steps,
   TestimonialSlider,
+  TestimonialDots,
 };

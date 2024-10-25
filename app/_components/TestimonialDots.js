@@ -1,6 +1,6 @@
 export default function TestimonialDots({ length, page, onPage }) {
   return (
-    <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-[32px] gap-3">
+    <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-3 gap-3 md:translate-y-0">
       {Array.from({ length }, (_, i) => (
         <button
           key={page + i}

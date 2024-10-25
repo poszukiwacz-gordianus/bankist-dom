@@ -18,7 +18,7 @@ export default function Page() {
         <hr />
         {/* <Features /> */}
         <hr />
-        {/* <Operations /> */}
+        <Operations />
         <hr />
         <Testimonials />
         <hr />

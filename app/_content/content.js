@@ -14,7 +14,7 @@ export const headerContent = {
   id: "header",
   image: {
     logo: "/img/logo.png",
-    alt: "four circles that intersect each other in the center. Each circle is black and they are all positioned in a way that forms a cloverleaf shape",
+    alt: "Four black intersecting circles forming a cloverleaf shape",
     link: { link: "#", text: "home" },
   },
   navigation: [
@@ -187,9 +187,26 @@ export const testimonialsContent = {
 
 /* CALLTOACTION */
 
+import icon from "@/public/img/icon.png";
+
 export const callToActionContent = {
   id: "cta",
   header:
     "The best day to join Bankist was one year ago. The second best is today!",
   button: "Open your free account today!",
+};
+
+export const footerContent = {
+  id: "footer",
+  navigation: [
+    { link: "#", text: "About" },
+    { link: "#", text: "Pricing" },
+    { link: "#", text: "Terms of Use" },
+    { link: "#", text: "Privacy Policy" },
+    { link: "#", text: "Careers" },
+    { link: "#", text: "Blog" },
+    { link: "#", text: "Contact Us" },
+  ],
+  icon,
+  alt: "Four black intersecting circles forming a cloverleaf shape",
 };

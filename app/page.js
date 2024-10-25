@@ -21,12 +21,11 @@ export default function Page() {
         <Operations />
         <hr />
         <Testimonials />
-        <hr />
         <CallToAction />
-        <hr />
+        <hr className="border-t border-zinc-600" />
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

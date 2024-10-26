@@ -3,18 +3,23 @@
 import Image from "next/image";
 import { testimonialsContent } from "../_content/content";
 import { Button, TestimonialDots } from "@/app/_components/Components";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 import { useInterval } from "usehooks-ts";
+import useKey from "../_hooks/useKey";
+import useIsOnScreen from "../_hooks/useIsOnScreen";
+
+const { testimonials } = testimonialsContent;
 
 export default function TestimonialSlider() {
-  const { testimonials } = testimonialsContent;
   const [testimonial, setTestimonial] = useState(testimonials[0]);
   const [page, setPage] = useState(0);
+  const [animation, setAnimation] = useState("");
+  const [isPlaying, setPlaying] = useState(false);
+  const ref = useRef();
+
   const { title, content, customer, location, image } = testimonial;
   const length = testimonials.length;
-  const [animation, setAnimation] = useState("");
-  const [isPlaying, setPlaying] = useState(true);
 
   useInterval(
     () => {
@@ -52,8 +57,28 @@ export default function TestimonialSlider() {
     }, duration);
   };
 
+  const handleKeypress = (condition) => {
+    setPlaying(false);
+    setTimeout(() => {
+      setPlaying(true);
+    }, 5000);
+    handleChange(condition);
+  };
+
+  useKey("ArrowLeft", () =>
+    handleKeypress(page === 0 ? length - 1 : page - 1, "left"),
+  );
+  useKey("ArrowRight", () => handleKeypress((page + 1) % length, "right"));
+
+  useIsOnScreen(
+    ref,
+    () => setPlaying(true),
+    () => setPlaying(false),
+  );
+
   return (
     <div
+      ref={ref}
       className="relative mt-16"
       onMouseEnter={() => setPlaying(false)}
       onMouseLeave={() => setPlaying(true)}

@@ -25,11 +25,15 @@ function StepImage({ image, alt }) {
   );
 }
 
-function StepInformation({ header, description, icon }) {
+function StepInformation({ header, description, icon, iconAlt }) {
   return (
     <div className="flex flex-col gap-2 sm:gap-4 md:px-10 lg:px-20">
       <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-2 md:gap-3 lg:gap-6">
-        <p className="rounded-full bg-primary-300 p-3 text-2xl text-primary-500 sm:text-3xl lg:text-4xl">
+        <p
+          className="rounded-full bg-primary-300 p-3 text-2xl text-primary-500 sm:text-3xl lg:text-4xl"
+          role="img"
+          aria-label={`icon: ${iconAlt}`}
+        >
           {icon}
         </p>
         <h4 className="text-base font-medium leading-none sm:text-lg xl:text-xl">

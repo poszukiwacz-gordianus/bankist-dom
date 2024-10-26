@@ -14,7 +14,7 @@ export const headerContent = {
   id: "header",
   image: {
     logo: "/img/logo.png",
-    alt: "Four black intersecting circles forming a cloverleaf shape",
+    alt: "Logo of Bankist: Four black intersecting circles forming a cloverleaf shape",
     link: { link: "#", text: "Homepage" },
   },
   navigation: [
@@ -62,6 +62,7 @@ export const featuresContent = {
       image: featureImage[0],
       alt: "Computer monitor displaying a banking website interface.",
       icon: <LuMonitor />,
+      iconAlt: "monitor",
     },
     {
       header: "Watch your money grow",
@@ -70,6 +71,7 @@ export const featuresContent = {
       image: featureImage[1],
       alt: "Growing plant",
       icon: <LuTrendingUp />,
+      iconAlt: "trending up",
     },
     {
       header: "Free debit card included",
@@ -78,6 +80,7 @@ export const featuresContent = {
       image: featureImage[2],
       alt: "Bank debit card",
       icon: <LuCreditCard />,
+      iconAlt: "credit card",
     },
   ],
 };
@@ -101,7 +104,11 @@ export const operationsContent = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
       icon: (
         <div className="flex items-center justify-center text-2xl text-secondary-500 sm:text-3xl lg:text-4xl">
-          <div className="inline-block rounded-full bg-secondary-200 p-3 md:p-4">
+          <div
+            className="inline-block rounded-full bg-secondary-200 p-3 md:p-4"
+            role="img"
+            aria-label="icon: upload"
+          >
             <LuUpload />
           </div>
         </div>
@@ -119,7 +126,11 @@ export const operationsContent = {
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       icon: (
         <div className="flex items-center justify-center text-2xl text-primary-500 sm:text-3xl lg:text-4xl">
-          <div className="rounded-full bg-primary-200 p-3 sm:inline-block md:p-4">
+          <div
+            className="rounded-full bg-primary-200 p-3 sm:inline-block md:p-4"
+            role="img"
+            aria-label="icon: home"
+          >
             <LuHome />
           </div>
         </div>
@@ -137,7 +148,11 @@ export const operationsContent = {
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo.",
       icon: (
         <div className="flex items-center justify-center text-2xl text-tertiary-600 sm:text-3xl lg:text-4xl">
-          <div className="rounded-full bg-tertiary-200 p-3 sm:inline-block md:p-4">
+          <div
+            className="rounded-full bg-tertiary-200 p-3 sm:inline-block md:p-4"
+            role="img"
+            aria-label="icon: person X"
+          >
             <BsPersonX />
           </div>
         </div>
@@ -208,5 +223,5 @@ export const footerContent = {
     { link: "#", text: "Contact Us" },
   ],
   icon,
-  alt: "Four black intersecting circles forming a cloverleaf shape",
+  alt: "Icon of four black intersecting circles forming a cloverleaf shape",
 };

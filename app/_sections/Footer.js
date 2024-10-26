@@ -5,8 +5,8 @@ import Image from "next/image";
 export default function Footer() {
   const { navigation, icon, alt } = footerContent;
   return (
-    <footer className="border-t border-zinc-600">
-      <div className="bg-zinc-700 px-6 py-14 md:py-20 lg:py-24">
+    <footer className="border-t border-zinc-700">
+      <div className="bg-zinc-800 px-6 py-14 md:py-20 lg:py-24">
         <div className="mx-auto flex max-w-screen-lg flex-col items-center gap-6 text-center text-stone-50 sm:gap-8 md:w-[65%] md:gap-10 lg:gap-12">
           <FooterLinks links={navigation} />
           <Image

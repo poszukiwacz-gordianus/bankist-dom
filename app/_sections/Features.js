@@ -24,6 +24,7 @@ export default function Features() {
                 header={step.header}
                 description={step.description}
                 icon={step.icon}
+                iconAlt={step.iconAlt}
               />
 
               {!!(i % 2) && width >= 544 ? (

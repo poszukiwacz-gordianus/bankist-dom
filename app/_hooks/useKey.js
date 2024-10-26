@@ -1,14 +1,18 @@
 "use client";
+
 import { useEffect } from "react";
 
-export default function useKey(key, callback) {
+export default function useKey(keyEvent = "keydown", key, callback) {
   useEffect(() => {
+    const clean = () => document.removeEventListener(keyEvent, keypress);
+
     const keypress = (e) => {
       if (e.key === key) callback();
+      clean();
     };
 
-    document.addEventListener("keydown", keypress);
+    document.addEventListener(keyEvent, keypress);
 
-    return () => document.removeEventListener("keydown", keypress);
-  }, [key, callback]);
+    return () => clean();
+  }, [keyEvent, key, callback]);
 }

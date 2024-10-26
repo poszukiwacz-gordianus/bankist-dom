@@ -30,7 +30,10 @@ export default function OperationTabs() {
   return (
     <div className="relative mx-auto mt-16 flex flex-col gap-4 bg-white px-6 pb-8 pt-12 sm:mt-24 sm:grid sm:grid-cols-[0.25fr_1.75fr] sm:px-12 sm:pb-12 sm:pt-16 md:mt-28 lg:mt-32">
       <div className="absolute left-0 top-0 w-full -translate-y-1/2 cursor-pointer">
-        <div className="mx-auto flex justify-around sm:justify-center sm:gap-3 md:w-[85%] lg:w-[75%] lg:justify-between">
+        <div
+          className="mx-auto flex justify-around sm:justify-center sm:gap-3 md:w-[85%] lg:w-[75%] lg:justify-between"
+          role="tablist"
+        >
           {operations.map((operation, i) => {
             const isActive = active === i;
             return (

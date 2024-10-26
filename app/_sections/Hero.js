@@ -21,7 +21,7 @@ export default function Hero() {
         <p className="px-6 text-xl md:px-0 md:text-2xl">{description}</p>
         <Link
           href={link.link}
-          className="solid mt-auto w-36 border-b-[1px] border-primary-500 text-lg text-primary-500 transition-all duration-300 hover:border-primary-700 hover:text-primary-700 md:text-xl"
+          className="solid mt-auto border-b-[1px] border-primary-800 text-lg text-primary-800 transition-all duration-300 hover:border-primary-700 hover:text-primary-700 md:text-xl"
           aria-label={`Go to ${link.text}`}
         >
           {link.text}

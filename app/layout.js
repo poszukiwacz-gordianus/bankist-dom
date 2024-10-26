@@ -19,7 +19,7 @@ const poppins = Poppins({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable}`}>
+    <html lang="en" className={`${poppins.variable} overflow-x-hidden`}>
       <body className="bg-stone-100 antialiased">
         <NavigationProvider>{children}</NavigationProvider>
       </body>

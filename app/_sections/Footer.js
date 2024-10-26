@@ -23,6 +23,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-200"
+              aria-label="External link to Jonas Schmedtmann X account"
             >
               Jonas Schmedtmann
             </a>

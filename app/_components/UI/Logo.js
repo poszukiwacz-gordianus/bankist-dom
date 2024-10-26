@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { headerContent } from "../_content/content";
+import { headerContent } from "../../_content/content";
 
 export default function Logo() {
   const {

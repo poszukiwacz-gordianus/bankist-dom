@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { headerContent } from "../_content/content";
-import { useNavigationContext } from "../_contexts/NavigationContext";
+import { headerContent } from "../../_content/content";
+import { useNavigationContext } from "../../_contexts/NavigationContext";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
-import useOutsideClickOrInteraction from "../_hooks/useOutsideClickOrInteraction";
+import useOutsideClickOrInteraction from "../../_hooks/useOutsideClickOrInteraction";
 import { Modal, OpenAccount } from "@/app/_components/Components";
 
 export default function Navigation() {
@@ -47,7 +47,7 @@ export default function Navigation() {
               <Modal.Open open="modal">
                 <Link href="#modal">
                   <button
-                    className="bg-primary-500 hover:bg-primary-600 rounded-full px-5 py-2 text-2xl transition-all duration-300 md:inline-block md:text-lg lg:text-lg"
+                    className="rounded-full bg-primary-500 px-5 py-2 text-2xl transition-all duration-300 hover:bg-primary-600 md:inline-block md:text-lg lg:text-lg"
                     onClick={(e) => {
                       e.preventDefault();
                       setIsOpen(false);

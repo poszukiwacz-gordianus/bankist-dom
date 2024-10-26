@@ -3,7 +3,8 @@
 import { useContext, cloneElement, useState, createContext } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
-import useOutsideClickOrInteraction from "../_hooks/useOutsideClickOrInteraction";
+import useOutsideClickOrInteraction from "../../_hooks/useOutsideClickOrInteraction";
+import useKey from "@/app/_hooks/useKey";
 
 const ModalContext = createContext();
 
@@ -20,6 +21,8 @@ function Modal({ children }) {
     setOpenName(name);
     setTimeout(() => setIsVisible(true), 100);
   };
+
+  useKey("keydown", "Escape", close);
 
   return (
     <ModalContext.Provider value={{ openName, open, close, isVisible }}>

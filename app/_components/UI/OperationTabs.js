@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { operationsContent } from "../_content/content";
+import { operationsContent } from "../../_content/content";
 
 export default function OperationTabs() {
   const { operations } = operationsContent;

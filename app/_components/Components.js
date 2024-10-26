@@ -1,19 +1,18 @@
-import Button from "./Button";
-import OperationTabs from "./OperationTabs";
-import FooterLinks from "./FooterLinks";
-import Logo from "./Logo";
-import Navigation from "./Navigation";
-import SectionHeader from "./SectionHeader";
-import Steps from "./Steps";
+import Button from "./UI/Button";
+import OperationTabs from "./UI/OperationTabs";
+import FooterLinks from "./UI/FooterLinks";
+import Logo from "./UI/Logo";
+import Navigation from "./UI/Navigation";
+import SectionHeader from "./UI/SectionHeader";
+import Steps from "./UI/Steps";
+import Modal from "./UI/Modal";
+import OpenAccount from "./UI/OpenAccount";
 
 import TestimonialSlider from "./TestimonialSlider/TestimonialSlider";
 import TestimonialMain from "./TestimonialSlider/TestimonialMain";
 import TestimonialCustomer from "./TestimonialSlider/TestimonialCustomer";
 import TestimonialNavigation from "./TestimonialSlider/TestimonialNavigation";
 import TestimonialDots from "./TestimonialSlider/TestimonialDots";
-
-import Modal from "./Modal";
-import OpenAccount from "./OpenAccount";
 
 export {
   Button,

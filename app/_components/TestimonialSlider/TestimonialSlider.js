@@ -71,8 +71,8 @@ export default function TestimonialSlider() {
     changeTestimonial(condition);
   };
 
-  useKey("ArrowLeft", () => handleKeypress(prevIndex, "left"));
-  useKey("ArrowRight", () => handleKeypress(nextIndex, "right"));
+  useKey("keydown", "ArrowLeft", () => handleKeypress(prevIndex, "left"));
+  useKey("keydown", "ArrowRight", () => handleKeypress(nextIndex, "right"));
 
   //If slider is visible on screen start playing slides, if slider leaves visible screen stop playing slides
   useIsOnScreen(

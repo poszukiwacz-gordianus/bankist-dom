@@ -13,8 +13,7 @@ export default function Logo() {
       height={106}
       alt={alt}
       className="h-8 w-28 md:h-12 md:w-40"
-      sizes="100vw"
-      quality={100}
+      sizes="20vw"
     />
   );
 }

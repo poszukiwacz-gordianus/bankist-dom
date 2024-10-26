@@ -20,7 +20,7 @@ export default function Hero() {
         <p className="px-6 text-xl md:px-0 md:text-2xl">{description}</p>
         <Link
           href={link.link}
-          className="text-primary-500 hover:text-primary-700 solid border-primary-500 hover:border-primary-700 mt-auto w-36 border-b-[1px] text-lg transition-all duration-300 md:text-xl"
+          className="solid mt-auto w-36 border-b-[1px] border-primary-500 text-lg text-primary-500 transition-all duration-300 hover:border-primary-700 hover:text-primary-700 md:text-xl"
         >
           {link.text}
         </Link>
@@ -29,8 +29,9 @@ export default function Hero() {
       <Image
         src={image}
         alt={alt}
-        sizes="(min-width: 1100px) 100vw, 80vw"
+        sizes="(max-width: 544px) 60vw, (max-width: 880px) 70vw, (max-width: 1100px) 33vw"
         className="mx-auto w-60 self-center sm:w-80 lg:w-full"
+        priority
       />
     </section>
   );

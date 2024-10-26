@@ -60,7 +60,7 @@ export default function TestimonialSlider() {
     >
       <blockquote className="flex flex-col justify-between gap-4 sm:mx-auto sm:max-w-[90%] sm:justify-around sm:gap-4 sm:py-4 md:max-w-[80%] lg:px-10 lg:py-10">
         <span
-          className={`${animation} text-primary-500 absolute left-0 top-2 text-7xl leading-4 sm:left-8 sm:top-10 sm:text-[8rem] md:left-20 lg:left-32 lg:top-16 lg:text-[11rem]`}
+          className={`${animation} absolute left-0 top-2 text-7xl leading-4 text-primary-500 sm:left-8 sm:top-10 sm:text-[8rem] md:left-20 lg:left-32 lg:top-16 lg:text-[11rem]`}
         >
           &ldquo;
         </span>
@@ -80,9 +80,10 @@ export default function TestimonialSlider() {
         >
           <Image
             src={image}
-            sizes="100vw"
+            sizes="10vw"
             className="h-14 w-14 rounded-full lg:h-16 lg:w-16"
             alt="customer photo"
+            placeholder="blur"
           />
           <div className="flex flex-col gap-1">
             <p className="text-sm font-medium sm:text-base md:text-lg">

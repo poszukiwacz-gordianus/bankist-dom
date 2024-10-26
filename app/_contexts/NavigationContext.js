@@ -3,6 +3,7 @@
 import { createContext, useState, useContext } from "react";
 import useSmoothNavigation from "../_hooks/useSmoothNavigation";
 import useStickyNavigation from "../_hooks/useStickyNavigation";
+import useScrollReveal from "../_hooks/useScrollReveal";
 
 const NavigationContext = createContext();
 
@@ -13,6 +14,7 @@ function NavigationProvider({ children }) {
   const [opacityEl, setOpacityEl] = useState("");
 
   useSmoothNavigation();
+  useScrollReveal("id", 0.15, false, "section-hidden");
   useStickyNavigation(sticky, setSticky, "hero");
 
   function changeOpacity(target) {

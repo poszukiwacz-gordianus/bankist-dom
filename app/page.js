@@ -15,14 +15,10 @@ export default function Page() {
 
       <main>
         <Hero />
-        <hr />
         <Features />
-        <hr />
         <Operations />
-        <hr />
         <Testimonials />
         <CallToAction />
-        <hr className="border-t border-zinc-600" />
       </main>
 
       <Footer />

@@ -24,9 +24,9 @@ export default function useSmoothNavigation(value = 0) {
     if (type === "%") offset = (window.innerHeight * offset) / 100;
   }
 
-  if (typeof window !== "undefined" && !isValid(offset)) return;
-
   useEffect(() => {
+    if (typeof window !== "undefined" && !isValid(offset)) return;
+
     const allLinks = document.querySelectorAll("a[href]");
     const handleLinkClick = (e) => {
       e.preventDefault();
@@ -61,5 +61,5 @@ export default function useSmoothNavigation(value = 0) {
       allLinks.forEach((link) =>
         link.removeEventListener("click", handleLinkClick),
       );
-  }, [value, type]);
+  }, [value, type, offset]);
 }

@@ -2,6 +2,7 @@ import useDisableScroll from "./useDisableScroll";
 import useIsOnScreen from "./useIsOnScreen";
 import useKey from "./useKey";
 import useOutsideClickOrInteraction from "./useOutsideClickOrInteraction";
+import useRedirect from "./useRedirect";
 import useScrollReveal from "./useScrollReveal";
 import useSmoothNavigation from "./useSmoothNavigation";
 import useStickyNavigation from "./useStickyNavigation";
@@ -18,4 +19,5 @@ export {
   useWindowSize,
   useSwipeLeftRight,
   useDisableScroll,
+  useRedirect,
 };

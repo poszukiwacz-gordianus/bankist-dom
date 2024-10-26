@@ -20,6 +20,7 @@ export default function OperationTabs() {
 
   const handleChange = (e, index) => {
     e.preventDefault();
+    e.currentTarget.blur();
     setOptions(index);
   };
 

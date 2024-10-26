@@ -22,7 +22,7 @@ export default function Footer() {
               href="https://x.com/jonasschmedtman"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-200"
+              className="text-blue-500 underline hover:text-blue-700"
               aria-label="External link to Jonas Schmedtmann X account"
             >
               Jonas Schmedtmann

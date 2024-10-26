@@ -1,4 +1,4 @@
-import { FooterLinks, Logo } from "@/app/_components/Components";
+import { FooterLinks } from "@/app/_components/Components";
 import { footerContent } from "../_content/content";
 import Image from "next/image";
 
@@ -9,7 +9,13 @@ export default function Footer() {
       <div className="bg-zinc-700 px-6 py-14 md:py-20 lg:py-24">
         <div className="mx-auto flex max-w-screen-lg flex-col items-center gap-6 text-center text-stone-50 sm:gap-8 md:w-[65%] md:gap-10 lg:gap-12">
           <FooterLinks links={navigation} />
-          <Image src={icon} alt={alt} sizes="100vh" className="h-12 w-12" />
+          <Image
+            src={icon}
+            alt={alt}
+            sizes="15vw"
+            placeholder="blur"
+            className="h-12 w-12"
+          />
           <p className="text-xs text-zinc-400 md:text-sm">
             © Inspired by the work of{" "}
             <a

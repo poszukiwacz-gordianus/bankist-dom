@@ -1,7 +1,8 @@
 "use client";
+
 import Image from "next/image";
-import { heroContent } from "../_content/content";
 import Link from "next/link";
+import { heroContent } from "../_content/content";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Hero() {
@@ -21,6 +22,7 @@ export default function Hero() {
         <Link
           href={link.link}
           className="solid mt-auto w-36 border-b-[1px] border-primary-500 text-lg text-primary-500 transition-all duration-300 hover:border-primary-700 hover:text-primary-700 md:text-xl"
+          aria-label={`Go to ${link.text}`}
         >
           {link.text}
         </Link>

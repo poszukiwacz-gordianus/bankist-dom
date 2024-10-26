@@ -3,22 +3,26 @@
 import { useContext, cloneElement, useState, createContext } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
-import useOutsideClickOrInteraction from "../../_hooks/useOutsideClickOrInteraction";
-import useKey from "@/app/_hooks/useKey";
+import { useOutsideClickOrInteraction, useKey } from "@/app/_hooks/hooks";
 
 const ModalContext = createContext();
 
 function Modal({ children }) {
   const [openName, setOpenName] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const [announce, setAnnounce] = useState("");
 
   const close = () => {
     setIsVisible(false);
-    setTimeout(() => setOpenName(""), 500);
+    setTimeout(() => {
+      setOpenName("");
+      setAnnounce("Open account form closed.");
+    }, 500);
   };
 
   const open = (name) => {
     setOpenName(name);
+    setAnnounce("Open account form open.");
     setTimeout(() => setIsVisible(true), 100);
   };
 
@@ -26,6 +30,10 @@ function Modal({ children }) {
 
   return (
     <ModalContext.Provider value={{ openName, open, close, isVisible }}>
+      {/* Live region for announcing modal state */}
+      <div aria-live="assertive" className="sr-only">
+        {announce}
+      </div>
       {children}
     </ModalContext.Provider>
   );
@@ -67,6 +75,7 @@ function Window({ children, name }) {
         <button
           className="absolute right-3 top-1 translate-x-3 rounded-sm bg-none p-2 transition-all duration-200"
           onClick={close}
+          aria-label="Close"
         >
           <HiXMark className="h-10 w-10 text-gray-500 hover:text-gray-800" />
         </button>

@@ -1,9 +1,9 @@
 "use client";
 
-import { SectionHeader, Steps } from "@/app/_components/Components";
-import useWindowSize from "../_hooks/useWindowSize";
-import { featuresContent } from "../_content/content";
 import { Fragment } from "react";
+import { featuresContent } from "../_content/content";
+import { SectionHeader, Steps } from "@/app/_components/Components";
+import { useWindowSize } from "../_hooks/hooks";
 
 export default function Features() {
   const { id, header, subHeader, stepsContent } = featuresContent;

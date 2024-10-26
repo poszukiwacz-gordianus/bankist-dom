@@ -19,6 +19,7 @@ function StepImage({ image, alt }) {
         className="h-auto w-screen"
         sizes="(max-width: 544px) 100vw, 50vw"
         placeholder="blur"
+        loading="lazy"
       />
     </div>
   );
@@ -31,9 +32,9 @@ function StepInformation({ header, description, icon }) {
         <p className="rounded-full bg-primary-300 p-3 text-2xl text-primary-500 sm:text-3xl lg:text-4xl">
           {icon}
         </p>
-        <h3 className="text-base font-medium leading-none sm:text-lg xl:text-xl">
+        <h4 className="text-base font-medium leading-none sm:text-lg xl:text-xl">
           {header}
-        </h3>
+        </h4>
       </div>
       <p className="text-xs leading-loose md:text-sm lg:text-base">
         {description}

@@ -15,7 +15,7 @@ export const headerContent = {
   image: {
     logo: "/img/logo.png",
     alt: "Four black intersecting circles forming a cloverleaf shape",
-    link: { link: "#", text: "home" },
+    link: { link: "#", text: "Homepage" },
   },
   navigation: [
     { link: "#features", text: "Features" },
@@ -100,8 +100,8 @@ export const operationsContent = {
       content:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.",
       icon: (
-        <div className="text-secondary-500 flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl">
-          <div className="bg-secondary-200 inline-block rounded-full p-3 md:p-4">
+        <div className="flex items-center justify-center text-2xl text-secondary-500 sm:text-3xl lg:text-4xl">
+          <div className="inline-block rounded-full bg-secondary-200 p-3 md:p-4">
             <LuUpload />
           </div>
         </div>
@@ -118,8 +118,8 @@ export const operationsContent = {
       content:
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       icon: (
-        <div className="text-primary-500 flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl">
-          <div className="bg-primary-200 rounded-full p-3 sm:inline-block md:p-4">
+        <div className="flex items-center justify-center text-2xl text-primary-500 sm:text-3xl lg:text-4xl">
+          <div className="rounded-full bg-primary-200 p-3 sm:inline-block md:p-4">
             <LuHome />
           </div>
         </div>
@@ -136,8 +136,8 @@ export const operationsContent = {
       content:
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo.",
       icon: (
-        <div className="text-tertiary-600 flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl">
-          <div className="bg-tertiary-200 rounded-full p-3 sm:inline-block md:p-4">
+        <div className="flex items-center justify-center text-2xl text-tertiary-600 sm:text-3xl lg:text-4xl">
+          <div className="rounded-full bg-tertiary-200 p-3 sm:inline-block md:p-4">
             <BsPersonX />
           </div>
         </div>

@@ -11,14 +11,14 @@ export default function TestimonialNavigation({
   return (
     <>
       <Button
-        className="absolute bottom-4 left-10 sm:bottom-1/2 sm:left-0 lg:left-10"
+        className="absolute hidden sm:bottom-1/2 sm:left-0 sm:block lg:left-10"
         onClick={() => changeTestimonial(prevIndex, "left")}
         ariaLabel="Go to previous testimonial"
       >
         <HiArrowLeft />
       </Button>
       <Button
-        className="absolute bottom-4 right-10 sm:bottom-1/2 sm:right-0 lg:right-10"
+        className="absolute hidden sm:bottom-1/2 sm:right-0 sm:block lg:right-10"
         onClick={() => changeTestimonial(nextIndex, "right")}
         ariaLabel="Go to next testimonial"
       >
@@ -31,7 +31,7 @@ export default function TestimonialNavigation({
         setTestimonial={(newIndex) =>
           changeTestimonial(
             newIndex,
-            newIndex > index ? "right" : "left",
+            newIndex > currentTestimonial ? "right" : "left",
           )
         }
       />

@@ -7,8 +7,7 @@ import {
   TestimonialMain,
   TestimonialNavigation,
 } from "@/app/_components/Components";
-import useKey from "../../_hooks/useKey";
-import useIsOnScreen from "../../_hooks/useIsOnScreen";
+import { useKey, useIsOnScreen, useSwipeLeftRight } from "@/app/_hooks/hooks";
 import { useInterval } from "usehooks-ts";
 
 const { testimonials } = testimonialsContent;
@@ -19,8 +18,6 @@ export default function TestimonialSlider() {
   const [animation, setAnimation] = useState("");
   const [isPlaying, setPlaying] = useState(false);
   const [isOnMouseEnter, setIsOnMouseEnter] = useState(false);
-
-  const ref = useRef();
 
   const { title, content, customer, location, image } = testimonial;
 
@@ -74,6 +71,11 @@ export default function TestimonialSlider() {
   useKey("keydown", "ArrowLeft", () => handleKeypress(prevIndex, "left"));
   useKey("keydown", "ArrowRight", () => handleKeypress(nextIndex, "right"));
 
+  const { ref, touchStart, touchMove, touchEnd } = useSwipeLeftRight(
+    () => changeTestimonial(prevIndex, "left"),
+    () => changeTestimonial(nextIndex, "right"),
+  );
+
   //If slider is visible on screen start playing slides, if slider leaves visible screen stop playing slides
   useIsOnScreen(
     ref,
@@ -87,6 +89,10 @@ export default function TestimonialSlider() {
       className="relative mt-16"
       onMouseEnter={() => setIsOnMouseEnter(true)}
       onMouseLeave={() => setIsOnMouseEnter(false)}
+      // Touch event handlers
+      onTouchStart={touchStart}
+      onTouchMove={touchMove}
+      onTouchEnd={touchEnd}
     >
       <blockquote
         aria-live="polite"

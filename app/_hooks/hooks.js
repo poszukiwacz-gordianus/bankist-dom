@@ -1,3 +1,4 @@
+import useDisableScroll from "./useDisableScroll";
 import useIsOnScreen from "./useIsOnScreen";
 import useKey from "./useKey";
 import useOutsideClickOrInteraction from "./useOutsideClickOrInteraction";
@@ -16,4 +17,5 @@ export {
   useStickyNavigation,
   useWindowSize,
   useSwipeLeftRight,
+  useDisableScroll,
 };

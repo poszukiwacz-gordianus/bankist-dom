@@ -3,7 +3,11 @@
 import { useContext, cloneElement, useState, createContext } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
-import { useOutsideClickOrInteraction, useKey } from "@/app/_hooks/hooks";
+import {
+  useOutsideClickOrInteraction,
+  useKey,
+  useDisableScroll,
+} from "@/app/_hooks/hooks";
 
 const ModalContext = createContext();
 
@@ -27,6 +31,7 @@ function Modal({ children }) {
   };
 
   useKey("keydown", "Escape", close);
+  useDisableScroll(openName !== "");
 
   return (
     <ModalContext.Provider value={{ openName, open, close, isVisible }}>

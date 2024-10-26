@@ -76,7 +76,7 @@ export default function TestimonialSlider() {
   );
 
   const { ref, touchStart, touchMove, touchEnd } = useSwipeLeftRight(
-    () => handleUserInteraction(prevIndex, "right"),
+    () => handleUserInteraction(prevIndex, "left"),
     () => handleUserInteraction(nextIndex, "left"),
   );
 

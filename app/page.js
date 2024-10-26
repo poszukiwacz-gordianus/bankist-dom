@@ -11,7 +11,7 @@ import {
 export default function Page() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
       <main>
         <Hero />

@@ -60,7 +60,7 @@ export default function TestimonialSlider() {
     }, duration);
   };
 
-  const handleKeypress = (condition) => {
+  const handleUserInteraction = (condition) => {
     setPlaying(false);
     setTimeout(() => {
       setPlaying(true);
@@ -68,12 +68,16 @@ export default function TestimonialSlider() {
     changeTestimonial(condition);
   };
 
-  useKey("keydown", "ArrowLeft", () => handleKeypress(prevIndex, "left"));
-  useKey("keydown", "ArrowRight", () => handleKeypress(nextIndex, "right"));
+  useKey("keydown", "ArrowLeft", () =>
+    handleUserInteraction(prevIndex, "left"),
+  );
+  useKey("keydown", "ArrowRight", () =>
+    handleUserInteraction(nextIndex, "right"),
+  );
 
   const { ref, touchStart, touchMove, touchEnd } = useSwipeLeftRight(
-    () => changeTestimonial(prevIndex, "left"),
-    () => changeTestimonial(nextIndex, "right"),
+    () => handleUserInteraction(nextIndex, "left"),
+    () => handleUserInteraction(prevIndex, "right"),
   );
 
   //If slider is visible on screen start playing slides, if slider leaves visible screen stop playing slides

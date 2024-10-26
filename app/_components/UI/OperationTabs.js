@@ -23,7 +23,6 @@ export default function OperationTabs() {
     setOptions(index);
   };
 
-  useKey("keydown", "Tab", () => setOptions(nextTab));
   useKey("keydown", "ArrowLeft", () => setOptions(prevTab));
   useKey("keydown", "ArrowRight", () => setOptions(nextTab));
 

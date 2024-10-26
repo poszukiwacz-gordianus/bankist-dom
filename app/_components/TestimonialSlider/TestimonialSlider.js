@@ -77,7 +77,7 @@ export default function TestimonialSlider() {
 
   const { ref, touchStart, touchMove, touchEnd } = useSwipeLeftRight(
     () => handleUserInteraction(nextIndex, "left"),
-    () => handleUserInteraction(prevIndex, "right"),
+    () => handleUserInteraction(prevIndex, "left"),
   );
 
   //If slider is visible on screen start playing slides, if slider leaves visible screen stop playing slides

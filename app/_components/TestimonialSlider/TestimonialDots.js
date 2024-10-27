@@ -9,7 +9,10 @@ export default function TestimonialDots({ length, index, setTestimonial }) {
           className={`${
             index === i ? "bg-stone-500 hover:cursor-default" : "bg-stone-300"
           } h-2 w-2 cursor-pointer rounded-full hover:bg-stone-500 hover:transition-all hover:duration-300`}
-          onClick={() => setTestimonial(i)}
+          onClick={(e) => {
+            e.currentTarget.blur();
+            setTestimonial(i);
+          }}
           aria-label={
             index === i
               ? `You are at slide ${index + 1}`

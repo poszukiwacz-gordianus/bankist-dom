@@ -70,7 +70,10 @@ export default function Navigation() {
       </nav>
       <button
         className="z-20 block text-4xl md:hidden"
-        onClick={() => setIsOpen((b) => !b)}
+        onClick={(e) => {
+          e.currentTarget.blur();
+          setIsOpen((b) => !b);
+        }}
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
         aria-expanded={isOpen}
       >

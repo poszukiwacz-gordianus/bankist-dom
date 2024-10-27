@@ -11,6 +11,9 @@ module.exports = {
         sans: ["var(--font-poppins)"],
       },
       screens: {
+        xs: "23em",
+        // => @media (min-width: 320px) { ... }
+
         sm: "34em",
         // => @media (min-width: 544px) { ... }
 

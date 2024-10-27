@@ -8,7 +8,7 @@ export default function TestimonialCustomer({
 }) {
   return (
     <div
-      className={`${animation} flex w-52 items-center gap-4 self-center sm:w-80 sm:self-start sm:pl-10`}
+      className={`${animation} flex w-52 gap-4 sm:w-80 sm:self-start sm:pl-10`}
     >
       <Image
         src={image}

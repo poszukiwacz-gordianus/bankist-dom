@@ -1,21 +1,18 @@
 export default function Button({
   id,
   children,
+  role = "button",
   className,
   onClick,
-  onMouseOver,
-  onMouseOut,
   ariaLabel,
 }) {
   return (
     <button
       id={id}
-      role="button"
+      role={role}
       className={`${className} absolute text-2xl hover:text-neutral-700 sm:text-4xl`}
       onClick={onClick}
       aria-label={ariaLabel}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}
     >
       {children}
     </button>

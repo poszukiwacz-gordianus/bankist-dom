@@ -23,6 +23,7 @@ export default function Header() {
         href={link}
         aria-label={`Go to ${text}`}
         className={`${opacity && opacityEl !== link ? "opacity-50" : "opacity-100"} transition-all duration-300`}
+        onClick={(e) => e.currentTarget.blur()}
       >
         <Logo />
       </Link>

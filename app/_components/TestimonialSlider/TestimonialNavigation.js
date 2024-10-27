@@ -9,50 +9,28 @@ export default function TestimonialNavigation({
   length,
 }) {
   return (
-    <>
+    <div>
       <Button
         id="sliderLeftArrow"
-        className="absolute hidden sm:bottom-1/2 sm:left-0 sm:block lg:left-10"
+        role="img"
+        className="absolute hidden sm:-left-4 sm:bottom-1/2 sm:block sm:-translate-x-1/2"
         onClick={(e) => {
           e.currentTarget.blur();
           changeTestimonial(prevIndex, "left");
         }}
         ariaLabel="Go to previous testimonial"
-        onMouseOver={() => {
-          // Set a temporary aria-label or accessible text on mouse hover
-          document
-            .getElementById(`sliderLeftArrow`)
-            .setAttribute("aria-label", `Go to previous testimonial`);
-        }}
-        onMouseOut={() => {
-          // Reset aria-label when not hovering
-          document
-            .getElementById(`sliderLeftArrow`)
-            .removeAttribute("aria-label");
-        }}
       >
         <HiArrowLeft />
       </Button>
       <Button
         id="sliderRightArrow"
-        className="absolute hidden sm:bottom-1/2 sm:right-0 sm:block lg:right-10"
+        role="img"
+        className="absolute hidden sm:bottom-1/2 sm:right-0 sm:block sm:translate-x-1/2"
         onClick={(e) => {
           e.currentTarget.blur();
           changeTestimonial(nextIndex, "right");
         }}
         ariaLabel="Go to next testimonial"
-        onMouseOver={() => {
-          // Set a temporary aria-label or accessible text on mouse hover
-          document
-            .getElementById(`sliderRightArrow`)
-            .setAttribute("aria-label", `Go to next testimonial`);
-        }}
-        onMouseOut={() => {
-          // Reset aria-label when not hovering
-          document
-            .getElementById(`sliderRightArrow`)
-            .removeAttribute("aria-label");
-        }}
       >
         <HiArrowRight />
       </Button>
@@ -64,6 +42,6 @@ export default function TestimonialNavigation({
           changeTestimonial(newIndex, newIndex > index ? "right" : "left")
         }
       />
-    </>
+    </div>
   );
 }

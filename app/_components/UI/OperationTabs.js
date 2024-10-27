@@ -28,8 +28,8 @@ export default function OperationTabs() {
   useKey("keydown", "ArrowRight", () => setOptions(nextTab));
 
   return (
-    <div className="relative mx-auto mt-16 flex flex-col gap-4 bg-white px-6 pb-8 pt-12 sm:mt-24 sm:grid sm:grid-cols-[0.25fr_1.75fr] sm:px-12 sm:pb-12 sm:pt-16 md:mt-28 lg:mt-32">
-      <div className="absolute left-0 top-0 w-full -translate-y-1/2 cursor-pointer">
+    <div className="relative mx-auto mt-16 flex flex-col items-center justify-center gap-4 bg-white px-6 pb-8 pt-12 sm:mt-24 sm:grid sm:grid-cols-[0.25fr_1.75fr] sm:px-12 sm:pb-12 sm:pt-16 md:mt-28 lg:mt-32">
+      <div className="absolute -left-4 top-0 w-[110%] -translate-y-1/2 cursor-pointer sm:left-0 sm:w-full">
         <div
           className="mx-auto flex justify-around sm:justify-center sm:gap-3 md:w-[85%] lg:w-[75%] lg:justify-between"
           role="tablist"
@@ -52,12 +52,12 @@ export default function OperationTabs() {
       </div>
       <div className="col-span-full flex items-center justify-center gap-4 sm:grid sm:grid-cols-[0.25fr_1.75fr]">
         {operation.icon}
-        <h2 className="text-sm font-medium sm:text-lg md:text-2xl">
+        <h3 className="text-base font-medium sm:text-lg md:text-2xl">
           {operation.header}
-        </h2>
+        </h3>
       </div>
 
-      <p className="-col-end-1 text-xs !leading-loose sm:text-sm md:text-base lg:text-base">
+      <p className="-col-end-1 text-sm !leading-loose sm:text-sm md:text-base lg:text-base">
         {operation.content}
       </p>
     </div>

@@ -60,12 +60,12 @@ export default function TestimonialSlider() {
     }, duration);
   };
 
-  const handleUserInteraction = (condition) => {
+  const handleUserInteraction = (index, dir) => {
     setPlaying(false);
     setTimeout(() => {
       setPlaying(true);
     }, 5000);
-    changeTestimonial(condition);
+    changeTestimonial(index, dir);
   };
 
   useKey("keydown", "ArrowLeft", () =>
@@ -77,7 +77,7 @@ export default function TestimonialSlider() {
 
   const { ref, touchStart, touchMove, touchEnd } = useSwipeLeftRight(
     () => handleUserInteraction(prevIndex, "left"),
-    () => handleUserInteraction(nextIndex, "left"),
+    () => handleUserInteraction(nextIndex, "right"),
   );
 
   //If slider is visible on screen start playing slides, if slider leaves visible screen stop playing slides
@@ -88,38 +88,32 @@ export default function TestimonialSlider() {
   );
 
   return (
-    <div
+    <blockquote
       ref={ref}
-      className="relative mt-16"
       onMouseEnter={() => setIsOnMouseEnter(true)}
       onMouseLeave={() => setIsOnMouseEnter(false)}
       // Touch event handlers
       onTouchStart={touchStart}
       onTouchMove={touchMove}
       onTouchEnd={touchEnd}
+      className="xs:py-4 relative mt-16 flex flex-col items-center sm:mx-auto sm:max-w-[90%] md:max-w-[80%] lg:px-10 lg:py-10"
     >
-      <blockquote className="flex flex-col justify-between gap-4 sm:mx-auto sm:max-w-[90%] sm:justify-around sm:gap-4 sm:py-4 md:max-w-[80%] lg:px-10 lg:py-10">
-        <TestimonialMain
-          animation={animation}
-          title={title}
-          content={content}
-        />
+      <TestimonialMain animation={animation} title={title} content={content} />
 
-        <TestimonialCustomer
-          animation={animation}
-          image={image}
-          customer={customer}
-          location={location}
-        />
+      <TestimonialCustomer
+        animation={animation}
+        image={image}
+        customer={customer}
+        location={location}
+      />
 
-        <TestimonialNavigation
-          changeTestimonial={changeTestimonial}
-          nextIndex={nextIndex}
-          prevIndex={prevIndex}
-          index={index}
-          length={length}
-        />
-      </blockquote>
-    </div>
+      <TestimonialNavigation
+        changeTestimonial={changeTestimonial}
+        nextIndex={nextIndex}
+        prevIndex={prevIndex}
+        index={index}
+        length={length}
+      />
+    </blockquote>
   );
 }

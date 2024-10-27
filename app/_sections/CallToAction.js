@@ -14,7 +14,7 @@ export default function CallToAction() {
             <Modal.Open open="modal">
               <button
                 role="button"
-                className="inline-block self-center rounded-full bg-primary-600 px-6 py-3 text-lg text-zinc-900 hover:bg-primary-700 lg:px-10 lg:py-5 lg:text-xl"
+                className="inline-block self-center rounded-full bg-primary-500 px-6 py-3 text-base font-medium text-zinc-900 hover:bg-primary-600 sm:text-lg lg:px-10 lg:py-5 lg:text-xl"
                 aria-label="Open account"
               >
                 {button}

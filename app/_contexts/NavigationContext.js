@@ -1,21 +1,18 @@
 "use client";
 
-import { createContext, useState, useContext } from "react";
-import useSmoothNavigation from "../_hooks/useSmoothNavigation";
-import useStickyNavigation from "../_hooks/useStickyNavigation";
-import useScrollReveal from "../_hooks/useScrollReveal";
+import { createContext, useState, useContext, useRef } from "react";
+import { useScrollReveal, useSmoothNavigation } from "@/app/_hooks/hooks";
 
 const NavigationContext = createContext();
 
 function NavigationProvider({ children }) {
-  const [sticky, setSticky] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(false);
   const [opacityEl, setOpacityEl] = useState("");
+  const ref = useRef();
 
   useSmoothNavigation();
   useScrollReveal("id", 0.15, false, "section-hidden");
-  useStickyNavigation(sticky, setSticky, "hero");
 
   function changeOpacity(target) {
     if (!target) {
@@ -30,12 +27,12 @@ function NavigationProvider({ children }) {
   return (
     <NavigationContext.Provider
       value={{
-        sticky,
         isOpen,
         setIsOpen,
         opacity,
         opacityEl,
         changeOpacity,
+        ref,
       }}
     >
       {children}

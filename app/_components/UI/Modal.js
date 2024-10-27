@@ -8,6 +8,7 @@ import {
   useKey,
   useDisableScroll,
 } from "@/app/_hooks/hooks";
+import { useNavigationContext } from "@/app/_contexts/NavigationContext";
 
 const ModalContext = createContext();
 
@@ -15,6 +16,8 @@ function Modal({ children }) {
   const [openName, setOpenName] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [announce, setAnnounce] = useState("");
+
+  const { ref } = useNavigationContext();
 
   const close = () => {
     setIsVisible(false);
@@ -31,7 +34,7 @@ function Modal({ children }) {
   };
 
   useKey("keydown", "Escape", close);
-  useDisableScroll(openName !== "");
+  useDisableScroll(openName !== "", ref);
 
   return (
     <ModalContext.Provider value={{ openName, open, close, isVisible }}>

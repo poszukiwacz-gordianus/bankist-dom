@@ -6,7 +6,7 @@ import { headerContent } from "../_content/content";
 import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Header() {
-  const { sticky, opacity, opacityEl, changeOpacity } = useNavigationContext();
+  const { opacity, opacityEl, changeOpacity, ref } = useNavigationContext();
 
   const {
     image: {
@@ -16,7 +16,8 @@ export default function Header() {
 
   return (
     <header
-      className={`${sticky ? "fixed bottom-0 top-0 z-50 h-14 w-full bg-[#ffffffed] py-0 shadow-sm md:h-20" : "relative h-14 md:h-20"} flex items-center justify-between px-4 transition-all duration-500 lg:px-6`}
+      ref={ref}
+      className="fixed bottom-0 top-0 z-50 flex h-14 w-full items-center justify-between bg-[#ffffffed] px-4 py-0 shadow-sm md:h-20 lg:px-6"
       onMouseOver={(e) => changeOpacity(e.target.closest("a")?.href)}
     >
       <Link

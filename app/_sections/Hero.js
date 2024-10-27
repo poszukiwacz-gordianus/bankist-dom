@@ -1,18 +1,14 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { heroContent } from "../_content/content";
-import { useNavigationContext } from "../_contexts/NavigationContext";
 
 export default function Hero() {
   const { id, header, description, link, image, alt } = heroContent;
-  const { sticky } = useNavigationContext();
 
   return (
     <section
       id={id}
-      className={`${sticky ? "mt-14 md:mt-20" : ""} mx-auto flex max-w-screen-lg flex-col gap-6 px-4 py-14 md:grid md:grid-cols-[1.2fr_0.8fr] md:gap-2 md:px-10 md:py-20 lg:py-24`}
+      className="mx-auto mt-14 flex max-w-screen-lg flex-col gap-6 px-4 py-14 md:mt-20 md:grid md:grid-cols-[1.2fr_0.8fr] md:gap-2 md:px-10 md:py-20 lg:py-24"
     >
       <div className="flex flex-col items-center gap-6 text-center md:items-start md:py-6 md:text-left lg:gap-8 lg:py-4">
         <h1 className="text-4xl font-medium leading-[3rem] sm:text-5xl sm:leading-[4.2rem] md:tracking-tighter lg:text-6xl lg:leading-[5.2rem]">

@@ -25,21 +25,40 @@ function getScrollbarWidth() {
   return scrollbarWidth;
 }
 
-export default function useDisableScroll(condition) {
+export default function useDisableScroll(condition, ref) {
   useEffect(() => {
+    // Element which needs to prevent orginall width
+    const elementToFixed = ref.current;
+    const initialPadding =
+      parseFloat(window.getComputedStyle(elementToFixed).paddingRight) || 0;
+
     const scrollWidth = getScrollbarWidth();
 
-    const applyStyles = (htmlOverflow, bodyOverflow, padding) => {
+    const applyStyles = (
+      htmlOverflow,
+      bodyOverflow,
+      padding,
+      elementPadding,
+    ) => {
       document.documentElement.style.overflow = htmlOverflow;
       document.body.style.overflow = bodyOverflow;
       document.body.style.paddingRight = padding;
+
+      if (elementToFixed) {
+        elementToFixed.style.paddingRight = elementPadding;
+      }
     };
-    const resetStyles = () => applyStyles("", "", "0px");
+    const resetStyles = () => applyStyles("", "", "0px", "");
 
     condition
-      ? applyStyles("hidden", "hidden", `${scrollWidth}px`)
+      ? applyStyles(
+          "hidden",
+          "hidden",
+          `${scrollWidth}px`,
+          `${scrollWidth + initialPadding}px`,
+        )
       : resetStyles();
 
     return () => resetStyles();
-  }, [condition]);
+  }, [condition, ref]);
 }

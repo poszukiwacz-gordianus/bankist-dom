@@ -5,7 +5,6 @@ import useOutsideClickOrInteraction from "./useOutsideClickOrInteraction";
 import useRedirect from "./useRedirect";
 import useScrollReveal from "./useScrollReveal";
 import useSmoothNavigation from "./useSmoothNavigation";
-import useStickyNavigation from "./useStickyNavigation";
 import useSwipeLeftRight from "./useSwipeLeftRight";
 import useWindowSize from "./useWindowSize";
 
@@ -15,7 +14,6 @@ export {
   useOutsideClickOrInteraction,
   useScrollReveal,
   useSmoothNavigation,
-  useStickyNavigation,
   useWindowSize,
   useSwipeLeftRight,
   useDisableScroll,
